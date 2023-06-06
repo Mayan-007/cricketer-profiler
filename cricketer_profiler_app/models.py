@@ -64,8 +64,8 @@ class BowlingCareer(models.Model):
     economy = models.FloatField()
     average = models.FloatField()
     strike_rate = models.FloatField()
-    four_wickets_in_an_innings = models.IntegerField()
-    five_wickets_in_an_innings = models.IntegerField()
+    four_wickets = models.IntegerField()
+    five_wickets = models.IntegerField()
 
     def __str__(self):
         return self.cricketer.name

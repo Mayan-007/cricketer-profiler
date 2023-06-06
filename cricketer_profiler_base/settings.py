@@ -38,7 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'cricketer_profiler.app',
+    'cricketer_profiler_app',
 ]
 
 MIDDLEWARE = [
