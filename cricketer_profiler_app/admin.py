@@ -8,13 +8,8 @@ class cricketerAdmin(admin.ModelAdmin):
     search_fields = ('name', 'country')
 
 admin.site.register(Cricketer, cricketerAdmin)
-
-class coachAdmin(admin.ModelAdmin):
-    list_display = ('name', 'country')
-    list_filter = ('name', 'country')
-    search_fields = ('name', 'country')
     
-admin.site.register(Coach, coachAdmin)
+admin.site.register(Coach)
 
 class matchFormatAdmin(admin.ModelAdmin):
     list_display = ('match_format',)
@@ -49,8 +44,6 @@ class teamAdmin(admin.ModelAdmin):
 admin.site.register(Team, teamAdmin)
 
 admin.site.register(CricketerTeam)
-
-admin.site.register(CoachTeam)
 
 class matchAdmin(admin.ModelAdmin):
     list_display = ('match_winner', 'match_format', 'team_1', 'team_2')

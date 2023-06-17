@@ -1,0 +1,52 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="container">
+    <nav class="navbar navbar-expand-lg bg-primary" data-bs-theme="dark">
+        <div class="container-fluid">
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="{% url 'cricketers' %}">All</a>
+                    </li>
+                     <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="{% url 'cricketers' 'allrounder' %}">All Rounder</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="{% url 'cricketers' 'batsman' %}">Batsman</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="{% url 'cricketers' 'bowler' %}">Bowler</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="{% url 'cricketers' 'coach' %}">Coach</a>
+                    </li>
+                </ul>
+                <form class="d-flex" role="search">
+                    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" id="search" name="search">
+                    <button class="btn btn-outline-light" type="submit">Search</button>
+                </form>
+            </div>
+        </div>
+    </nav>
+    <div class="container">
+        <div class="row">
+            {% for cricketer in cricketers %}
+            <div class="col-3 my-5">
+                <div class="card border-0 shadow-lg" style="width: 18rem;">
+                    <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+                        {{ cricketer.player_role }}
+                    </span>
+                    <img src="{{ cricketer.image.url }}" height="250" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">{{ cricketer.name }}</h5>
+                        <p class="card-text">{{ cricketer.description }} ...</p>
+                        <a href="{% url 'cricketer' cricketer.id %}" class="btn btn-primary">Profile</a>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</div>
+{% endblock %}

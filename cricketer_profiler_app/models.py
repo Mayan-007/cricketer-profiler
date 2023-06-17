@@ -3,6 +3,7 @@ from django.db import models
 class Cricketer(models.Model):
     name = models.CharField(max_length=50)
     image = models.ImageField(upload_to="images/cricketer/")
+    description = models.TextField()
     country = models.CharField(max_length=50)
     birth_date = models.DateField()
     birth_place = models.CharField(max_length=50)
@@ -16,15 +17,10 @@ class Cricketer(models.Model):
         return self.name
 
 class Coach(models.Model):
-    name = models.CharField(max_length=50)
-    image = models.ImageField(upload_to="images/coach/")
-    country = models.CharField(max_length=50)
-    birth_date = models.DateField()
-    birth_place = models.CharField(max_length=50)
-    age = models.IntegerField()
+    cricketer = models.ForeignKey(Cricketer, on_delete=models.CASCADE)
 
     def __str__(self):
-        return self.name
+        return self.cricketer.name
     
 class MatchFormat(models.Model):
     match_format = models.CharField(max_length=50)
@@ -83,6 +79,7 @@ class FieldingCareer(models.Model):
 class Team(models.Model):
     team_name = models.CharField(max_length=50)
     team_logo = models.ImageField(upload_to="images/team/")
+    team_format = models.ForeignKey(MatchFormat, on_delete=models.CASCADE)
     country = models.CharField(max_length=50)
     captain = models.ForeignKey(Cricketer, on_delete=models.CASCADE)
     coach = models.ForeignKey(Coach, on_delete=models.CASCADE)
@@ -98,13 +95,6 @@ class CricketerTeam(models.Model):
     
     def __str__(self):
         return self.cricketer.name
-
-class CoachTeam(models.Model):
-    coach = models.ForeignKey(Coach, on_delete=models.CASCADE)
-    team = models.ForeignKey(Team, on_delete=models.CASCADE)
-    
-    def __str__(self):
-        return self.coach.name
 
 class Match(models.Model):
     match_date = models.DateField()

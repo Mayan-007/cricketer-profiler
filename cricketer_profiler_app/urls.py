@@ -3,8 +3,10 @@ from cricketer_profiler_app.views import *
 
 urlpatterns = [
     path('', index, name='index'),
-    path('cricketers/', allCricketers, name='all_cricketers'),
-    path('coaches/', allCoaches, name='all_coaches'),
-    path('teams/', allTeams, name='all_teams'),
-    path('matches/', allMatches, name='all_matches'),
+    path('cricketers/', cricketers, name='cricketers'),
+    path('cricketers/<role>/', cricketers, name='cricketers'),
+    path('cricketer/<int:id>/', cricketer, name='cricketer'),
+    path('teams/', teams, name='teams'),
+    path('matches/', matches, name='matches'),
+    path('livematches/', liveMatches, name='livematches'),
 ]

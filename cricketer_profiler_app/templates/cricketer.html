@@ -1,0 +1,260 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="container p-5 mt-5 shadow-lg">
+    <div class="row border-bottom border-secondary my-3 d-flex align-items-end">
+        <div class="col-4 my-1">
+            <img src="{{ cricketer.image.url }}" height="250" width="250" alt="">
+        </div>
+        <div class="col-8">
+            <h1>{{ cricketer.name }}</h1>
+            <h3>{{ cricketer.country }}</h3>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-4 bg-primary-subtle">
+            <p class="fw-bold">Personal Information</p>
+            <div class="row my-2 d-flex justify-content-between">
+                <div class="col fw-semibold">Born</div>
+                <div class="col">{{ cricketer.birth_date }} ({{ cricketer.age }} years)</div>
+            </div>
+            <div class="row my-2 d-flex justify-content-between">
+                <div class="col fw-semibold">Birth Place</div>
+                <div class="col">{{ cricketer.birth_place }}</div>
+            </div>
+            <div class="row my-2 d-flex justify-content-between">
+                <div class="col fw-semibold">Height</div>
+                <div class="col">{{ cricketer.height }} cm</div>
+            </div>
+            <div class="row my-2 d-flex justify-content-between">
+                <div class="col fw-semibold">Role</div>
+                <div class="col">{{ cricketer.player_role }}</div>
+            </div>
+            <div class="row my-2 d-flex justify-content-between">
+                <div class="col fw-semibold">Batting Style</div>
+                <div class="col">{{ cricketer.batting_style }}</div>
+            </div>
+            <div class="row my-2 d-flex justify-content-between">
+                <div class="col fw-semibold">Bowling Style</div>
+                <div class="col">{{ cricketer.bowling_style }}</div>
+            </div>
+        </div>
+        <div class="col-8">
+            <p class="fs-5">{{ cricketer.description }}</p>
+            <h5 class="fw-bold">Batting Career summary</h5>
+            <table class="table table-striped table-info">
+                <thead>
+                    <tr>
+                        <th scope="col"></th>
+                        <th scope="col">M</th>
+                        <th scope="col">Inn</th>
+                        <th scope="col">NO</th>
+                        <th scope="col">Runs</th>
+                        <th scope="col">HS</th>
+                        <th scope="col">Avg</th>
+                        <th scope="col">BF</th>
+                        <th scope="col">SR</th>
+                        <th scope="col">100</th>
+                        <th scope="col">200</th>
+                        <th scope="col">50</th>
+                        <th scope="col">4s</th>
+                        <th scope="col">6s</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <th scope="row">Test</th>
+                        <td>2</td>
+                        <td>3</td>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>0.0</td>
+                        <td>5</td>
+                        <td>0.0</td>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>0</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">ODI</th>
+                        <td>2</td>
+                        <td>3</td>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>0.0</td>
+                        <td>5</td>
+                        <td>0.0</td>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>0</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">T20I</th>
+                        <td>2</td>
+                        <td>3</td>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>0.0</td>
+                        <td>5</td>
+                        <td>0.0</td>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>0</td>
+                    </tr>
+                </tbody>
+            </table>
+            <h5 class="fw-bold">Bowling Career summary</h5>
+            <table class="table table-striped table-info">
+                <thead>
+                    <tr>
+                        <th scope="col"></th>
+                        <th scope="col">M</th>
+                        <th scope="col">Inn</th>
+                        <th scope="col">NO</th>
+                        <th scope="col">Runs</th>
+                        <th scope="col">HS</th>
+                        <th scope="col">Avg</th>
+                        <th scope="col">BF</th>
+                        <th scope="col">SR</th>
+                        <th scope="col">100</th>
+                        <th scope="col">200</th>
+                        <th scope="col">50</th>
+                        <th scope="col">4s</th>
+                        <th scope="col">6s</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <th scope="row">Test</th>
+                        <td>2</td>
+                        <td>3</td>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>0.0</td>
+                        <td>5</td>
+                        <td>0.0</td>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>0</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">ODI</th>
+                        <td>2</td>
+                        <td>3</td>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>0.0</td>
+                        <td>5</td>
+                        <td>0.0</td>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>0</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">T20I</th>
+                        <td>2</td>
+                        <td>3</td>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>0.0</td>
+                        <td>5</td>
+                        <td>0.0</td>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>0</td>
+                    </tr>
+                </tbody>
+            </table>
+            <h5 class="fw-bold">Fielding Career summary</h5>
+            <table class="table table-striped table-info">
+                <thead>
+                    <tr>
+                        <th scope="col"></th>
+                        <th scope="col">M</th>
+                        <th scope="col">Inn</th>
+                        <th scope="col">NO</th>
+                        <th scope="col">Runs</th>
+                        <th scope="col">HS</th>
+                        <th scope="col">Avg</th>
+                        <th scope="col">BF</th>
+                        <th scope="col">SR</th>
+                        <th scope="col">100</th>
+                        <th scope="col">200</th>
+                        <th scope="col">50</th>
+                        <th scope="col">4s</th>
+                        <th scope="col">6s</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <th scope="row">Test</th>
+                        <td>2</td>
+                        <td>3</td>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>0.0</td>
+                        <td>5</td>
+                        <td>0.0</td>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>0</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">ODI</th>
+                        <td>2</td>
+                        <td>3</td>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>0.0</td>
+                        <td>5</td>
+                        <td>0.0</td>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>0</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">T20I</th>
+                        <td>2</td>
+                        <td>3</td>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>0.0</td>
+                        <td>5</td>
+                        <td>0.0</td>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>0</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+{% endblock %}
