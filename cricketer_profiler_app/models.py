@@ -79,6 +79,7 @@ class FieldingCareer(models.Model):
 class Team(models.Model):
     team_name = models.CharField(max_length=50)
     team_logo = models.ImageField(upload_to="images/team/")
+    description = models.TextField()
     team_format = models.ForeignKey(MatchFormat, on_delete=models.CASCADE)
     country = models.CharField(max_length=50)
     captain = models.ForeignKey(Cricketer, on_delete=models.CASCADE)
@@ -102,14 +103,13 @@ class Match(models.Model):
     venue = models.CharField(max_length=50)
     team_1 = models.ForeignKey(Team, on_delete=models.CASCADE, related_name="team_1")
     team_2 = models.ForeignKey(Team, on_delete=models.CASCADE, related_name="team_2")
-    result = models.CharField(max_length=20)
     toss_winner = models.ForeignKey(Team, on_delete=models.CASCADE, related_name="toss_winner")
-    match_winner = models.ForeignKey(Team, on_delete=models.CASCADE, related_name="match_winner")
+    toss_decision = models.CharField(max_length=20)
+    result = models.CharField(max_length=20)
+    winner = models.ForeignKey(Team, on_delete=models.CASCADE, related_name="match_winner")
+    win_by_runs = models.IntegerField()
+    win_by_wickets = models.IntegerField()
     player_of_the_match = models.ForeignKey(Cricketer, on_delete=models.CASCADE)
-    team_1_batting_score = models.IntegerField()
-    team_1_bowling_score = models.IntegerField()
-    team_2_batting_score = models.IntegerField()
-    team_2_bowling_score = models.IntegerField()
     
     def __str__(self):
         return self.team_1.team_name + " vs " + self.team_2.team_name

@@ -42,7 +42,7 @@
         <div class="col-8">
             <p class="fs-5">{{ cricketer.description }}</p>
             <h5 class="fw-bold">Batting Career summary</h5>
-            <table class="table table-striped table-info">
+            <table class="table table-striped table-info text-center">
                 <thead>
                     <tr>
                         <th scope="col"></th>
@@ -55,203 +55,89 @@
                         <th scope="col">BF</th>
                         <th scope="col">SR</th>
                         <th scope="col">100</th>
-                        <th scope="col">200</th>
                         <th scope="col">50</th>
                         <th scope="col">4s</th>
                         <th scope="col">6s</th>
                     </tr>
                 </thead>
                 <tbody>
+                    {% for stat in batstats %}
                     <tr>
-                        <th scope="row">Test</th>
-                        <td>2</td>
-                        <td>3</td>
-                        <td>0</td>
-                        <td>0</td>
-                        <td>0</td>
-                        <td>0.0</td>
-                        <td>5</td>
-                        <td>0.0</td>
-                        <td>0</td>
-                        <td>0</td>
-                        <td>0</td>
-                        <td>0</td>
-                        <td>0</td>
+                        <th scope="row">{{ stat.match_format.match_format }}</th>
+                        <td>{{ stat.matches }}</td>
+                        <td>{{ stat.innings }}</td>
+                        <td>{{ stat.not_outs }}</td>
+                        <td>{{ stat.runs }}</td>
+                        <td>{{ stat.highest_score }}</td>
+                        <td>{{ stat.average }}</td>
+                        <td>{{ stat.balls_faced }}</td>
+                        <td>{{ stat.strike_rate }}</td>
+                        <td>{{ stat.hundreds }}</td>
+                        <td>{{ stat.fifties }}</td>
+                        <td>{{ stat.fours }}</td>
+                        <td>{{ stat.sixes }}</td>
                     </tr>
-                    <tr>
-                        <th scope="row">ODI</th>
-                        <td>2</td>
-                        <td>3</td>
-                        <td>0</td>
-                        <td>0</td>
-                        <td>0</td>
-                        <td>0.0</td>
-                        <td>5</td>
-                        <td>0.0</td>
-                        <td>0</td>
-                        <td>0</td>
-                        <td>0</td>
-                        <td>0</td>
-                        <td>0</td>
-                    </tr>
-                    <tr>
-                        <th scope="row">T20I</th>
-                        <td>2</td>
-                        <td>3</td>
-                        <td>0</td>
-                        <td>0</td>
-                        <td>0</td>
-                        <td>0.0</td>
-                        <td>5</td>
-                        <td>0.0</td>
-                        <td>0</td>
-                        <td>0</td>
-                        <td>0</td>
-                        <td>0</td>
-                        <td>0</td>
-                    </tr>
+                    {% endfor %}
                 </tbody>
             </table>
             <h5 class="fw-bold">Bowling Career summary</h5>
-            <table class="table table-striped table-info">
+            <table class="table table-striped table-info text-center">
                 <thead>
                     <tr>
                         <th scope="col"></th>
                         <th scope="col">M</th>
                         <th scope="col">Inn</th>
-                        <th scope="col">NO</th>
+                        <th scope="col">B</th>
                         <th scope="col">Runs</th>
-                        <th scope="col">HS</th>
+                        <th scope="col">W</th>
+                        <th scope="col">BBI</th>
+                        <th scope="col">BBM</th>
+                        <th scope="col">Econ</th>
                         <th scope="col">Avg</th>
-                        <th scope="col">BF</th>
                         <th scope="col">SR</th>
-                        <th scope="col">100</th>
-                        <th scope="col">200</th>
-                        <th scope="col">50</th>
-                        <th scope="col">4s</th>
-                        <th scope="col">6s</th>
+                        <th scope="col">4W</th>
+                        <th scope="col">5W</th>
                     </tr>
                 </thead>
                 <tbody>
+                    {% for stat in bowlstats %}
                     <tr>
-                        <th scope="row">Test</th>
-                        <td>2</td>
-                        <td>3</td>
-                        <td>0</td>
-                        <td>0</td>
-                        <td>0</td>
-                        <td>0.0</td>
-                        <td>5</td>
-                        <td>0.0</td>
-                        <td>0</td>
-                        <td>0</td>
-                        <td>0</td>
-                        <td>0</td>
-                        <td>0</td>
+                        <th scope="row">{{ stat.match_format.match_format }}</th>
+                        <td>{{ stat.matches }}</td>
+                        <td>{{ stat.innings }}</td>
+                        <td>{{ stat.balls }}</td>
+                        <td>{{ stat.runs }}</td>
+                        <td>{{ stat.wickets }}</td>
+                        <td>{{ stat.best_bowling_innings }}</td>
+                        <td>{{ stat.best_bowling_match }}</td>
+                        <td>{{ stat.economy }}</td>
+                        <td>{{ stat.average }}</td>
+                        <td>{{ stat.strike_rate }}</td>
+                        <td>{{ stat.four_wickets }}</td>
+                        <td>{{ stat.five_wickets }}</td>
                     </tr>
-                    <tr>
-                        <th scope="row">ODI</th>
-                        <td>2</td>
-                        <td>3</td>
-                        <td>0</td>
-                        <td>0</td>
-                        <td>0</td>
-                        <td>0.0</td>
-                        <td>5</td>
-                        <td>0.0</td>
-                        <td>0</td>
-                        <td>0</td>
-                        <td>0</td>
-                        <td>0</td>
-                        <td>0</td>
-                    </tr>
-                    <tr>
-                        <th scope="row">T20I</th>
-                        <td>2</td>
-                        <td>3</td>
-                        <td>0</td>
-                        <td>0</td>
-                        <td>0</td>
-                        <td>0.0</td>
-                        <td>5</td>
-                        <td>0.0</td>
-                        <td>0</td>
-                        <td>0</td>
-                        <td>0</td>
-                        <td>0</td>
-                        <td>0</td>
-                    </tr>
+                    {% endfor %}
                 </tbody>
             </table>
             <h5 class="fw-bold">Fielding Career summary</h5>
-            <table class="table table-striped table-info">
+            <table class="table table-striped table-info text-center">
                 <thead>
                     <tr>
                         <th scope="col"></th>
-                        <th scope="col">M</th>
-                        <th scope="col">Inn</th>
-                        <th scope="col">NO</th>
-                        <th scope="col">Runs</th>
-                        <th scope="col">HS</th>
-                        <th scope="col">Avg</th>
-                        <th scope="col">BF</th>
-                        <th scope="col">SR</th>
-                        <th scope="col">100</th>
-                        <th scope="col">200</th>
-                        <th scope="col">50</th>
-                        <th scope="col">4s</th>
-                        <th scope="col">6s</th>
+                        <th scope="col">Catches</th>
+                        <th scope="col">Run Outs</th>
+                        <th scope="col">Stumpings</th>
                     </tr>
                 </thead>
                 <tbody>
+                    {% for stat in fieldstats %}
                     <tr>
-                        <th scope="row">Test</th>
-                        <td>2</td>
-                        <td>3</td>
-                        <td>0</td>
-                        <td>0</td>
-                        <td>0</td>
-                        <td>0.0</td>
-                        <td>5</td>
-                        <td>0.0</td>
-                        <td>0</td>
-                        <td>0</td>
-                        <td>0</td>
-                        <td>0</td>
-                        <td>0</td>
+                        <th scope="row">{{ stat.match_format.match_format }}</th>
+                        <td>{{ stat.catches }}</td>
+                        <td>{{ stat.run_outs }}</td>
+                        <td>{{ stat.stumpings }}</td>
                     </tr>
-                    <tr>
-                        <th scope="row">ODI</th>
-                        <td>2</td>
-                        <td>3</td>
-                        <td>0</td>
-                        <td>0</td>
-                        <td>0</td>
-                        <td>0.0</td>
-                        <td>5</td>
-                        <td>0.0</td>
-                        <td>0</td>
-                        <td>0</td>
-                        <td>0</td>
-                        <td>0</td>
-                        <td>0</td>
-                    </tr>
-                    <tr>
-                        <th scope="row">T20I</th>
-                        <td>2</td>
-                        <td>3</td>
-                        <td>0</td>
-                        <td>0</td>
-                        <td>0</td>
-                        <td>0.0</td>
-                        <td>5</td>
-                        <td>0.0</td>
-                        <td>0</td>
-                        <td>0</td>
-                        <td>0</td>
-                        <td>0</td>
-                        <td>0</td>
-                    </tr>
+                    {% endfor %}
                 </tbody>
             </table>
         </div>

@@ -41,7 +41,9 @@
                     <div class="card-body">
                         <h5 class="card-title">{{ cricketer.name }}</h5>
                         <p class="card-text">{{ cricketer.description }} ...</p>
-                        <a href="{% url 'cricketer' cricketer.id %}" class="btn btn-primary">Profile</a>
+                    </div>
+                    <div class="card-footer bg-transparent border-0">
+                        <a href="{% url 'cricketer' cricketer.id %}" class="btn btn-primary w-100">Profile</a>
                     </div>
                 </div>
             </div>

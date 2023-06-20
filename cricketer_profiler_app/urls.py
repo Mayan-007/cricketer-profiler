@@ -7,6 +7,8 @@ urlpatterns = [
     path('cricketers/<role>/', cricketers, name='cricketers'),
     path('cricketer/<int:id>/', cricketer, name='cricketer'),
     path('teams/', teams, name='teams'),
+    path('teams/<type>/', teams, name='teams'),
+    path('team/<int:id>/', team, name='team'),
     path('matches/', matches, name='matches'),
     path('livematches/', liveMatches, name='livematches'),
 ]

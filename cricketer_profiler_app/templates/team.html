@@ -1,0 +1,115 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="container p-5 mt-5 shadow-lg">
+    <div class="row border-bottom border-secondary my-3 d-flex align-items-end">
+        <div class="col-4 my-1">
+            <img src="{{ team.team_logo.url }}" height="250" width="250" alt="">
+        </div>
+        <div class="col-8">
+            <h1>{{ team.team_name }}</h1>
+            <h3>{{ team.home_ground }}</h3>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-4 bg-primary-subtle">
+            <p class="fw-bold">Personal Information</p>
+            <div class="row my-2 d-flex justify-content-between">
+                <div class="col fw-semibold">Team Format</div>
+                <div class="col">{{ team.team_format.match_format }}</div>
+            </div>
+            <div class="row my-2 d-flex justify-content-between">
+                <div class="col fw-semibold">Country</div>
+                <div class="col">{{ team.country }}</div>
+            </div>
+            <div class="row my-2 d-flex justify-content-between">
+                <div class="col fw-semibold">Captain</div>
+                <div class="col">{{ team.captain.name }}</div>
+            </div>
+            <div class="row my-2 d-flex justify-content-between">
+                <div class="col fw-semibold">Coach</div>
+                <div class="col">{{ team.coach.cricketer.name }}</div>
+            </div>
+            <div class="row my-2 d-flex justify-content-between">
+                <div class="col fw-semibold">Home Ground</div>
+                <div class="col">{{ team.home_ground }}</div>
+            </div>
+            <div class="row my-2 d-flex justify-content-between">
+                <div class="col fw-semibold">Established</div>
+                <div class="col">{{ team.established }}</div>
+            </div>
+        </div>
+        <div class="col-8">
+            <p class="fs-5">{{ team.description }}</p>
+            <h3>BATSMEN</h3>
+            <div class="container">
+                <div class="row">
+                    {% for batsman in batsmen %}
+                    <div class="col-6">
+                        <div class="row my-3 d-flex align-items-end">
+                            <div class="col-4 my-1">
+                                <img src="{{ batsman.cricketer.image.url }}" height="100" width="100" alt="">
+                            </div>
+                            <div class="col-8">
+                                <a href="{% url 'cricketer' batsman.cricketer.id %}"><p>{{ batsman.cricketer.name }}</p></a>
+                            </div>
+                        </div>
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+            <h3>All Rounders</h3>
+            <div class="container">
+                <div class="row">
+                    {% for allrounder in allrounders %}
+                    <div class="col-6">
+                        <div class="row my-3 d-flex align-items-end">
+                            <div class="col-4 my-1">
+                                <img src="{{ allrounder.cricketer.image.url }}" height="100" width="100" alt="">
+                            </div>
+                            <div class="col-8">
+                                <a href="{% url 'cricketer' allrounder.cricketer.id %}"><p>{{ allrounder.cricketer.name }}</p></a>
+                            </div>
+                        </div>
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+            <h3>Wicket Keepers</h3>
+            <div class="container">
+                <div class="row">
+                    {% for wicket_keeper in wicket_keepers %}
+                    <div class="col-6">
+                        <div class="row my-3 d-flex align-items-end">
+                            <div class="col-4 my-1">
+                                <img src="{{ wicket_keeper.cricketer.image.url }}" height="100" width="100" alt="">
+                            </div>
+                            <div class="col-8">
+                                <a href="{% url 'cricketer' wicket_keeper.cricketer.id %}"><p>{{ wicket_keeper.cricketer.name }}</p></a>
+                            </div>
+                        </div>
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+            <h3>All Rounders</h3>
+            <div class="container">
+                <div class="row">
+                    {% for bowler in bowlers %}
+                    <div class="col-6">
+                        <div class="row my-3 d-flex align-items-end">
+                            <div class="col-4 my-1">
+                                <img src="{{ bowler.cricketer.image.url }}" height="100" width="100" alt="">
+                            </div>
+                            <div class="col-8">
+                                <a href="{% url 'cricketer' bowler.cricketer.id %}"><p>{{ bowler.cricketer.name }}</p></a>
+                            </div>
+                        </div>
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

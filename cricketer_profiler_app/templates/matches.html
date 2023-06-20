@@ -29,5 +29,38 @@
             </div>
         </div>
     </nav>
+    <div class="container">
+        {% for match in matches %}
+        <div class="container shadow-lg">
+            <div class="row d-flex justify-content-between align-items-center text-center my-4">
+                <div class="col-4 my-4">
+                    <img src="{{ match.team_1.team_logo.url }}" height="200" width="200" alt="">
+                    {% if match.team_1 == match.winner %}
+                    <h4 class="text-success">{{ match.team_1.team_name }}</h4>
+                    {% else %}
+                    <h4 class="text-danger">{{ match.team_1.team_name }}</h4>
+                    {% endif %}
+                    {% if match.team_1 == match.toss_winner %}
+                        <i class="bi bi-coin text-success"></i>
+                    {% endif %}
+                </div>
+                <div class="col-4 my-4">
+                    <h4>VS</h4>
+                </div>
+                <div class="col-4 my-4">
+                    <img src="{{ match.team_2.team_logo.url }}" height="200" width="200" alt="">
+                    {% if match.team_2 == match.winner %}
+                    <h4 class="text-success">{{ match.team_2.team_name }}</h4>
+                    {% else %}
+                    <h4 class="text-danger">{{ match.team_2.team_name }}</h4>
+                    {% endif %}
+                    {% if match.team_2 == match.toss_winner %}
+                        <i class="bi bi-coin text-success"></i>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
 </div>
 {% endblock %}

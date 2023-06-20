@@ -43,11 +43,16 @@ class teamAdmin(admin.ModelAdmin):
     
 admin.site.register(Team, teamAdmin)
 
-admin.site.register(CricketerTeam)
+class cricketerTeamAdmin(admin.ModelAdmin):
+    list_display = ('cricketer', 'team')
+    list_filter = ('cricketer', 'team')
+    search_fields = ('cricketer', 'team')
+
+admin.site.register(CricketerTeam, cricketerTeamAdmin)
 
 class matchAdmin(admin.ModelAdmin):
-    list_display = ('match_winner', 'match_format', 'team_1', 'team_2')
-    list_filter = ('match_winner', 'match_format', 'team_1', 'team_2')
-    search_fields = ('match_winner', 'match_format', 'team_1', 'team_2')
+    list_display = ('winner', 'match_format', 'team_1', 'team_2')
+    list_filter = ('winner', 'match_format', 'team_1', 'team_2')
+    search_fields = ('winner', 'match_format', 'team_1', 'team_2')
 
 admin.site.register(Match, matchAdmin)
